@@ -1,24 +1,15 @@
 import PizzaImage from './images/Pizza.jpg'
+import {createElementWithClassAndId} from './helper-functions.js'
 
+const PAGE = createElementWithClassAndId('div',['page-panel']);
 const CONTENT = document.querySelector('#content');
 const HEADER_TAB = createElementWithClassAndId('div','header-tab');
 const TITLE_BLOCK = createElementWithClassAndId('div','title-block');
 document.body.insertBefore(TITLE_BLOCK,CONTENT);
 document.body.insertBefore(HEADER_TAB,CONTENT);
+CONTENT.append(PAGE);
 
 
-function createElementWithClassAndId(elementTag, cssClassList=[], cssID=undefined) {
-    let new_div = document.createElement(elementTag);
-    if (typeof cssClassList === "string") {
-        cssID = cssClassList;
-    } else {
-        cssClassList.forEach((cssClass) => {new_div.classList.add(cssClass)});
-    }
-    if (cssID != undefined) {
-        new_div.id = cssID;
-    }
-    return new_div;
-}
 
 const HeaderButton = {
     HOME_BTN : createElementWithClassAndId('button', ['header-button'],'home'),
@@ -48,3 +39,4 @@ function initializeTitleBlock() {
 initializeHeaderTab();
 initializeTitleBlock();
 
+export {CONTENT, PAGE}
