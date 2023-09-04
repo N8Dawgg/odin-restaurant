@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/N8Dawgg/odin-restaurant#readme",
   "devDependencies": {
+    "html-loader": "^4.2.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }
